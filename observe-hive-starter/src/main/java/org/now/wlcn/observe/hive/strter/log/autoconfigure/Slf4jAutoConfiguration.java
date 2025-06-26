@@ -5,9 +5,11 @@ import org.now.wlcn.observe.hive.slf4j.log.Slf4jAppender;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
+@ConditionalOnProperty(name = "observe.hive.enabled", havingValue = "true")
 @AutoConfiguration
 @ConditionalOnClass(value = {
         ch.qos.logback.classic.Logger.class
