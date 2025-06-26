@@ -5,7 +5,11 @@ spring:
 observe:
   hive:
     enabled: true
-
+    adapters:
+      logback:
+        enabled: true
+      log4j2:
+        enabled: true
     storage:
       console:
         enabled: true

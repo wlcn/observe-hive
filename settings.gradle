@@ -12,6 +12,7 @@ include(
         "observe-hive-starter",
         "observe-hive-slf4j",
         "observe-hive-storage-file",
+        "observe-hive-storage-h2",
         "samples:springboot3-sample"
 )
 

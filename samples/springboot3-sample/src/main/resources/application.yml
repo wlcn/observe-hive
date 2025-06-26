@@ -1,10 +1,14 @@
 observe:
   hive:
     enabled: true
-
+    adapters:
+      logback:
+        enabled: false
+      log4j2:
+        enabled: true
     storage:
       console:
-        enabled: false
+        enabled: true
       file:
         enabled: true
       elasticsearch:

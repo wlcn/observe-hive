@@ -25,6 +25,7 @@ import java.util.Optional;
 
 
 @ConditionalOnProperty(name = "observe.hive.enabled", havingValue = "true")
+@ConditionalOnProperty(name = "observe.hive.adapters.logback.enabled", havingValue = "true")
 @AutoConfiguration
 @ConditionalOnClass(value = {
         ch.qos.logback.classic.Logger.class
@@ -44,6 +45,7 @@ public class Slf4jAutoConfiguration {
 
 
 @ConditionalOnProperty(name = "observe.hive.enabled", havingValue = "true")
+@ConditionalOnProperty(name = "observe.hive.adapters.logback.enabled", havingValue = "true")
 @AutoConfigureAfter(Slf4jAutoConfiguration.class)
 @Component
 @RequiredArgsConstructor

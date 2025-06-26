@@ -28,7 +28,7 @@ public class Slf4jAppender extends AppenderBase<ILoggingEvent> implements LogApp
     }
 
     private LogEvent convert(ILoggingEvent event) {
-        return new LogEvent(
+        return LogEvent.create(
                 Instant.ofEpochMilli(event.getTimeStamp()),
                 event.getLevel().toString(),
                 event.getLoggerName(),
