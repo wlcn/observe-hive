@@ -1,0 +1,13 @@
+plugins {
+	id 'java-library'
+}
+
+dependencies {
+
+
+}
+
+java {
+	withSourcesJar()
+}
+

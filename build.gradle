@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+allprojects {
+    apply plugin: 'java'  // Ensure Java plugin is applied first
+
+    group = 'org.now.wlcn'
+    version = project.version
+
+    repositories {
+        mavenCentral()
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(javaVersion)
+        }
+        withSourcesJar()
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+subprojects {
+
+    dependencies {
+
+
+    }
+}

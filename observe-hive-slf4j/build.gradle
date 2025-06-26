@@ -1,0 +1,10 @@
+plugins {
+	id 'java-library'
+}
+
+dependencies {
+	implementation project(':observe-hive-core')
+
+	compileOnly "ch.qos.logback:logback-classic:${logbackClassicVersion}"
+
+}

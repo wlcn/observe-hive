@@ -1,0 +1,14 @@
+logging:
+  collector:
+    enabled: true
+    storage:
+      elasticsearch:
+        enabled: true
+        hosts: http://localhost:9200
+        index-pattern: "app-logs-{date}"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics

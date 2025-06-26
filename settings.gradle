@@ -1,0 +1,20 @@
+pluginManagement {
+    plugins {
+        id 'org.springframework.boot' version "${springBootVersion}"
+        id 'io.spring.dependency-management' version "${springDependencyManagementVersion}"
+    }
+}
+
+rootProject.name = 'observe-hive'
+include(
+        "observe-hive-api",
+        "observe-hive-core",
+        "observe-hive-starter",
+        "observe-hive-slf4j",
+        "observe-hive-storage-file",
+        "samples:springboot3-sample"
+)
+
+
+
+
