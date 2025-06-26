@@ -20,20 +20,30 @@ A modular, extensible log collection system built with Spring Boot 3 and Java 21
 
 ### Adapters
 ```gradle
-implementation 'com.example:observe-hive-slf4j' // SLF4J support
-implementation 'com.example:observe-hive-log4j2' // Log4j2 support
+implementation 'org.now.wlcn:observe-hive-slf4j' // SLF4J support
+implementation 'org.now.wlcn:observe-hive-log4j2' // Log4j2 support
 ```
 
 ### Storage Plugins
 
 ```yaml
-logging:
-  collector:
+observe:
+  hive:
+    enabled: true
+    adapters:
+      logback:
+        enabled: true
+      log4j2:
+        enabled: true
     storage:
+      console:
+        enabled: true
+      file:
+        enabled: true
       elasticsearch:
+        enabled: true
         hosts: http://localhost:9200
-      kafka:
-        bootstrap-servers: localhost:9092
+        index-pattern: "app-logs-{date}"
 ```
 
 ## Quick Start
@@ -42,19 +52,32 @@ logging:
 
 ```gradle
 dependencies {
-    implementation 'com.example:observe-hive-starter'
-    implementation 'com.example:observe-hive-slf4j'
-    implementation 'com.example:observe-hive-storage-elasticsearch'
+    implementation 'org.now.wlcn:observe-hive-starter'
+    implementation 'org.now.wlcn:observe-hive-slf4j'
+    implementation 'org.now.wlcn:observe-hive-storage-elasticsearch'
 }
 ``` 
 
 2. Configure (application.yml):
 
 ```yaml
-logging:
-  collector:
+observe:
+  hive:
     enabled: true
-    buffer-size: 1000
+    adapters:
+      logback:
+        enabled: true
+      log4j2:
+        enabled: true
+    storage:
+      console:
+        enabled: true
+      file:
+        enabled: true
+      elasticsearch:
+        enabled: true
+        hosts: http://localhost:9200
+        index-pattern: "app-logs-{date}"
 ```
 
 3. Verify:
@@ -98,16 +121,3 @@ public Executor logExecutor() {
 ## License
 
 Apache 2.0 © [Long Wang]
-
-```text
-
-This is pure Markdown that can be directly copied into a README.md file. It includes:
-- Proper headers and sections
-- Code blocks with syntax highlighting
-- Tables for module documentation
-- Configuration examples
-- Extension guidelines
-- License information
-
-All formatting will render correctly in GitHub/GitLab markdown viewers.
-```
