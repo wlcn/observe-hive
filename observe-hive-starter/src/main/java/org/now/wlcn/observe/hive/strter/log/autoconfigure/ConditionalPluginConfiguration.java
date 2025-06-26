@@ -12,13 +12,13 @@ import org.springframework.context.annotation.Configuration;
 public class ConditionalPluginConfiguration {
 
     @Bean
-    @ConditionalOnProperty(name = "observe.hive.enabled", havingValue = "true")
+    @ConditionalOnProperty(name = "observe.hive.storage.file.enabled", havingValue = "true")
     public LogPlugin filePlugin() {
         return new FilePlugin();
     }
 
     @Bean
-    @ConditionalOnProperty(name = "observe.hive.enabled", havingValue = "true")
+    @ConditionalOnProperty(name = "observe.hive.storage.console.enabled", havingValue = "true")
     public LogPlugin consolePlugin() {
         return new ConsolePlugin();
     }

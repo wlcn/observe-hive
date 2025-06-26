@@ -1,3 +1,17 @@
 spring:
   application:
     name: observe hive starter
+
+observe:
+  hive:
+    enabled: true
+
+    storage:
+      console:
+        enabled: true
+      file:
+        enabled: true
+      elasticsearch:
+        enabled: true
+        hosts: http://localhost:9200
+        index-pattern: "app-logs-{date}"

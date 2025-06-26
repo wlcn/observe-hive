@@ -12,7 +12,7 @@ public class LogCollector implements AutoCloseable {
     private final ExecutorService executor;
 
     public LogCollector(List<LogPlugin> plugins) {
-        this.plugins = List.copyOf(plugins);
+        this.plugins = plugins;
         this.executor = Executors.newVirtualThreadPerTaskExecutor();
     }
 
@@ -29,11 +29,6 @@ public class LogCollector implements AutoCloseable {
                 });
             }
         });
-    }
-
-    public void registerPlugin(LogPlugin plugin) {
-        plugins.add(plugin);
-        plugin.init();
     }
 
     @Override

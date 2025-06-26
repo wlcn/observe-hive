@@ -1,7 +1,12 @@
 observe:
   hive:
     enabled: true
+
     storage:
+      console:
+        enabled: false
+      file:
+        enabled: true
       elasticsearch:
         enabled: true
         hosts: http://localhost:9200
