@@ -16,7 +16,5 @@ public class InitCommandLineRunner implements CommandLineRunner {
         log.info("info");
         log.warn("warn");
         log.error("error");
-
-
     }
 }

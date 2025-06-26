@@ -10,7 +10,7 @@ observe:
       console:
         enabled: false
       file:
-        enabled: false
+        enabled: true
       h2:
         enabled: true
       elasticsearch:

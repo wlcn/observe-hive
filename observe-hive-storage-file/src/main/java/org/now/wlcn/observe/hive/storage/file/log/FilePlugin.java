@@ -17,7 +17,7 @@ public class FilePlugin implements LogPlugin {
 
     @Override
     public void store(LogEvent event) {
-        System.err.printf("%s %s", pluginId(), event);
+        System.err.println(pluginId() + event);
     }
 
 
