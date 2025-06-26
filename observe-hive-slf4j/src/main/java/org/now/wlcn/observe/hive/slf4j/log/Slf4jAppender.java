@@ -7,19 +7,23 @@ import org.now.wlcn.observe.hive.api.log.LogEvent;
 import org.now.wlcn.observe.hive.core.log.LogCollector;
 
 import java.time.Instant;
+import java.util.Objects;
 
 public class Slf4jAppender extends AppenderBase<ILoggingEvent> {
-    private LogCollector collector;
+    private final LogCollector collector;
 
-    public void setLogCollector(LogCollector collector) {
-        this.collector = collector;
+    private Slf4jAppender(final LogCollector logCollector) {
+        this.collector = logCollector;
+    }
+
+    public static Slf4jAppender create(final LogCollector logCollector) {
+        Objects.requireNonNull(logCollector, "logCollector must not be null");
+        return new Slf4jAppender(logCollector);
     }
 
     @Override
     protected void append(ILoggingEvent event) {
-        if (collector != null) {
-            collector.collect(convert(event));
-        }
+        collector.collect(convert(event));
     }
 
     private LogEvent convert(ILoggingEvent event) {
