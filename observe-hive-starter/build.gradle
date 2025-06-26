@@ -8,6 +8,7 @@ dependencies {
     api project(':observe-hive-core')
 
     compileOnly project(':observe-hive-slf4j')
+    compileOnly project(':observe-hive-storage-file')
 
     compileOnly 'org.springframework.boot:spring-boot-starter'
 

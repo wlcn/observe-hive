@@ -3,13 +3,14 @@ package org.now.wlcn.observe.hive.slf4j.log;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.classic.spi.ThrowableProxy;
 import ch.qos.logback.core.AppenderBase;
+import org.now.wlcn.observe.hive.api.log.LogAppender;
 import org.now.wlcn.observe.hive.api.log.LogEvent;
 import org.now.wlcn.observe.hive.core.log.LogCollector;
 
 import java.time.Instant;
 import java.util.Objects;
 
-public class Slf4jAppender extends AppenderBase<ILoggingEvent> {
+public class Slf4jAppender extends AppenderBase<ILoggingEvent> implements LogAppender {
     private final LogCollector collector;
 
     private Slf4jAppender(final LogCollector logCollector) {

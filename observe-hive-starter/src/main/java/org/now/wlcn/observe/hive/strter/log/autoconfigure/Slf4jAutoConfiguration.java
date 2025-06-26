@@ -10,8 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 @AutoConfiguration
 @ConditionalOnClass(value = {
-        ch.qos.logback.classic.Logger.class,
-        org.now.wlcn.observe.hive.slf4j.log.Slf4jAppender.class
+        ch.qos.logback.classic.Logger.class
 })
 @EnableConfigurationProperties(ObserveHiveProperties.class)
 public class Slf4jAutoConfiguration {
@@ -23,4 +22,5 @@ public class Slf4jAutoConfiguration {
         appender.setName("ObserveHive_Slf4jAppender");
         return appender;
     }
+
 }
