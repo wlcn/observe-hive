@@ -13,6 +13,13 @@ public class ObserveHiveProperties {
     @Data
     public static class Storage {
         private Elasticsearch elasticsearch;
+        private H2 h2;
+
+        @Data
+        public static class H2 {
+            private boolean enabled;
+            private String hosts;
+        }
 
         @Data
         public static class Elasticsearch {

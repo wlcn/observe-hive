@@ -9,6 +9,7 @@ dependencies {
 
     compileOnly project(':observe-hive-slf4j')
     compileOnly project(':observe-hive-storage-file')
+    compileOnly project(':observe-hive-storage-h2')
 
     compileOnly 'org.springframework.boot:spring-boot-starter'
 

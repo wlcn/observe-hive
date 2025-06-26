@@ -3,13 +3,15 @@ observe:
     enabled: true
     adapters:
       logback:
-        enabled: false
+        enabled: true
       log4j2:
         enabled: true
     storage:
       console:
-        enabled: true
+        enabled: false
       file:
+        enabled: false
+      h2:
         enabled: true
       elasticsearch:
         enabled: true

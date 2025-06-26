@@ -1,13 +1,13 @@
-package org.now.wlcn.observe.hive.storage.file.log.log;
+package org.now.wlcn.observe.hive.storage.file.log;
 
 import org.now.wlcn.observe.hive.api.log.LogEvent;
 import org.now.wlcn.observe.hive.api.log.LogPlugin;
 
-public class ConsolePlugin implements LogPlugin {
+public class FilePlugin implements LogPlugin {
 
     @Override
     public String pluginId() {
-        return "console";
+        return "file";
     }
 
     @Override
@@ -17,7 +17,7 @@ public class ConsolePlugin implements LogPlugin {
 
     @Override
     public void store(LogEvent event) {
-        System.err.println(event);
+        System.err.printf("%s %s", pluginId(), event);
     }
 
 
